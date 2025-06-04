@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const orderItemSchema = new mongoose.Schema({
     product: {
@@ -31,7 +31,7 @@ const orderSchema = new mongoose.Schema({
         lowercase: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
-    items: [orderItemSchema], // Array of order items
+    items: [orderItemSchema], // Array, referencing the item above.
     totalAmount: {
         type: Number,
         required: true,
@@ -53,6 +53,4 @@ const orderSchema = new mongoose.Schema({
     timestamps: true 
 });
 
-const Order = mongoose.model('Order', orderSchema);
-
-module.exports = Order;
+export default mongoose.model("Order", orderSchema);
