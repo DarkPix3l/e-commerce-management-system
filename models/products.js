@@ -24,8 +24,11 @@ const productSchema = new mongoose.Schema(
     instock: {
       type: Boolean,
       default: true,
-      min: 0,
+    },
+    quantity: {
+      type: Number,
       default: 0,
+      min: 0,
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -46,7 +49,6 @@ const productSchema = new mongoose.Schema(
       ref: "Category",
       required: true,
     },
-
     ratings: {
       type: Number,
       default: 0,

@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+//Changing schema means now changing its validation as well
+
 const categorySchema = mongoose.Schema({
   name: {
     type: String,
